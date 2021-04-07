@@ -1,9 +1,8 @@
-import { Server } from './Server'
+import { Server } from './Server/Server'
 
 class Launcher {
     // instance variables
-    private name: string
-    private server: Server
+    private server: Server;
 
     constructor() {
         this.server = new Server();
@@ -12,7 +11,6 @@ class Launcher {
     public launchApp() {
         console.log('started app');
         this.server.createServer();
-        (this.server as any).somePrivateLogic();
     }
 
 }
