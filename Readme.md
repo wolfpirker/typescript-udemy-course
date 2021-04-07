@@ -6,4 +6,4 @@ course lecturer: Alex Horea
 
 # Manager server
 
-![Overview](doc/Arch.png)
+![Overview](Arch.png)
