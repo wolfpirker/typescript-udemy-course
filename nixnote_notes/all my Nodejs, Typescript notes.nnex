@@ -249,12 +249,92 @@ request from: '</span> + <span style=
 </div>
 <div><br /></div>
 <div><br /></div>
+<div>#18 Interfaces</div>
+<div>
+<ul>
+<li>I know...</li>
+<li>kind of contract</li>
+<li>define the model of our code</li>
+<li>interfaces: only declarations, no implementation</li>
+</ul>
+<div>#19 The authorizer</div>
+<div>
+<ul>
+<li>see Authorizer.ts</li>
+</ul>
+</div>
 <div><br /></div>
+<div>#20 Handling promise rejection in Node.JS</div>
+<div>
+<ul>
+<li>common error in Typescript and modern JS:
+"UnhandledPromiseRejectionWarning"</li>
+<ul>
+<li>... SyntaxERror: Unexpected end of JSON input</li>
+</ul>
+<li>in Future releases of Node.js:</li>
+<ul>
+<li>it will not be handled, but kill our server instead!</li>
+<li>see DeprecationWarning</li>
+</ul>
+<li>happens also when Json is invalid</li>
+<li>or when our current code, is open with login url in the
+browser</li>
+<li><br /></li>
+</ul>
+</div>
+<div>#21 user credentials database</div>
+<div>
+<ul>
+<li>new Shared model with enum AccessRight&nbsp;</li>
+<li>and Interface,&nbsp;UserCredentialsDBAccess.ts</li>
+</ul>
+<div>#22 lightweight JS database</div>
+</div>
+<div>
+<ul>
+<li>nedb introduction</li>
+<ul>
+<li><span style="background-color: rgb(255, 255, 0);">npm install
+nedb</span></li>
+</ul>
+<li>import all from a package</li>
+<ul>
+<li>
+<div style=
+"color: rgb(212, 212, 212); background-color: rgb(30, 30, 30); font-family: 'Droid Sans Mono', monospace, monospace, 'Droid Sans Fallback'; font-size: 14px; line-height: 19px; white-space: pre;">
+<span style="color: #c586c0;">import</span> <span style=
+"color: #569cd6;">*</span> <span style="color: #c586c0;">as</span>
+<span style="color: #9cdcfe;">Nedb</span> <span style=
+"color: #c586c0;">from</span> <span style=
+"color: #ce9178;">'nedb'</span>;</div>
+</li>
+<li>new in modern JS</li>
+</ul>
+<li>file DbTest.ts in test folder, outside of src</li>
+<ul>
+<li>execute with</li>
+<li><span style="background-color: rgb(255, 255, 0);">$
+./node_modules/.bin/ts-node test/DbTest</span></li>
+</ul>
+</ul>
+<div>#23 Authorizer database</div>
+</div>
+</div>
+<div>
+<ul>
+<li>we want to do basic querying</li>
+<ul>
+<li>look into nedb documentation</li>
+</ul>
+<li><br /></li>
+</ul>
+</div>
 </div>
 </en-note>]]></Content>
-        <ContentLength>8939</ContentLength>
+        <ContentLength>10986</ContentLength>
         <Created>1617784070725</Created>
-        <Updated>1617793014154</Updated>
+        <Updated>1617818505212</Updated>
         <Active>true</Active>
         <UpdateSequenceNumber>0</UpdateSequenceNumber>
         <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>
