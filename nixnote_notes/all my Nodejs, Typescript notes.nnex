@@ -2,6 +2,67 @@
 <!DOCTYPE NixNote-Export>
 <nixnote-export version="2" exportType="export" application="NixNote" applicationVersion="2.x">
     <Note>
+        <Guid>a496ac8e-4794-43a0-a4df-00346ee532b9</Guid>
+        <Title>Udemy course, section 4: Data server setup</Title>
+        <Content><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM 'http://xml.evernote.com/pub/enml2.dtd'><en-note style=
+"word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">
+
+#27 Section intro
+<div>
+<ul>
+<li>authenticate users</li>
+<li>put users</li>
+<li>query the database with arguments</li>
+<li>delete users</li>
+</ul>
+<div>covered Typescript features:</div>
+</div>
+<div>
+<ul>
+<li>inheritance</li>
+<li>abstract classes</li>
+<li>protected methods</li>
+</ul>
+<div>other concepts</div>
+</div>
+<div>
+<ul>
+<li>http request - parse body</li>
+<li>regular expression</li>
+<li>API documentation with Swagger</li>
+</ul>
+<div>#28 User database</div>
+</div>
+<div>
+<ul>
+<li>again use the test script (DbTest.ts) and modify it</li>
+<li>use command</li>
+<ul>
+<li>./node_modules/.bin/ts-node test/DbTest<br /></li>
+</ul>
+<li>new in next lesson</li>
+<ul>
+<li>get user and restrict retrieval to requests of users which have
+a session token</li>
+</ul>
+</ul>
+<div>#29 Users handler</div>
+</div>
+<div><br /></div>
+</en-note>]]></Content>
+        <ContentLength>1043</ContentLength>
+        <Created>1618090308838</Created>
+        <Updated>1618092550908</Updated>
+        <Active>true</Active>
+        <UpdateSequenceNumber>0</UpdateSequenceNumber>
+        <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>
+        <Attributes>
+            <Author>wolfi</Author>
+        </Attributes>
+        <Dirty>true</Dirty>
+    </Note>
+    <Note>
         <Guid>c2c5b402-6873-4295-93d6-a45aaf32cb2f</Guid>
         <Title>Udemy course, section 3: Web server basic setup</Title>
         <Content><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
@@ -327,14 +388,49 @@ nedb</span></li>
 <ul>
 <li>look into nedb documentation</li>
 </ul>
-<li><br /></li>
 </ul>
+<div><br /></div>
+<div>#25 http codes and methods</div>
+<div>
+<ul>
+<li>see the wikipedia article on it</li>
+<ul>
+<li>List of HTTP status code</li>
+<ul>
+<li>2xx is success responses</li>
+<li>common also: 404 Not found</li>
+</ul>
+</ul>
+<li>methods</li>
+<ul>
+<li>GET</li>
+<li>POST</li>
+<ul>
+<li>submit an entity to the specified resource</li>
+<li>often causing state of change</li>
+</ul>
+<li>PUT</li>
+<ul>
+<li>somewhat resembles the POST</li>
+</ul>
+<li>DELETE</li>
+</ul>
+</ul>
+<div><br /></div>
+</div>
+<div>#26 method filtering</div>
+<div>
+<ul>
+<li>threat GET/POST/PUT etc. differently part of lection 26</li>
+</ul>
+</div>
+<div><br /></div>
 </div>
 </div>
 </en-note>]]></Content>
-        <ContentLength>10986</ContentLength>
+        <ContentLength>11608</ContentLength>
         <Created>1617784070725</Created>
-        <Updated>1617818505212</Updated>
+        <Updated>1618090306957</Updated>
         <Active>true</Active>
         <UpdateSequenceNumber>0</UpdateSequenceNumber>
         <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>
