@@ -6,4 +6,5 @@ Content-Type: application/json
     "password": "1230"
 }
 #######
-GET http://localhost:8080/users?id=123
+GET http://localhost:8080/users?id=afwioj
+Authorization: v0hzccyy0t
