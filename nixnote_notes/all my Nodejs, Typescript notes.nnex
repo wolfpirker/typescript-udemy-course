@@ -65,13 +65,37 @@ requests.http</li>
 <en-media type="image/png" hash="5478eec745ea746bcbc1026e6deddd96"></en-media><br />
 </li>
 </ul>
+</ul>
+<div>#30 Refactoring with abstract classes</div>
+<div>
+<ul>
+<li>avoid repetition</li>
+<ul>
+<li>Loginhandler and User handler have a lot in common</li>
+</ul>
+<li>ways around it</li>
+<ul>
+<li>inheritance&nbsp;</li>
+<ul>
+<li>in TS: abstract classes</li>
+</ul>
+</ul>
+<li>important keyword</li>
+<ul>
+<li>used in class constructor of class which extends Abstract
+class</li>
+<ul>
+<li>super</li>
+</ul>
 <li><br /></li>
 </ul>
+</ul>
+</div>
 </div>
 </en-note>]]></Content>
-        <ContentLength>1523</ContentLength>
+        <ContentLength>1936</ContentLength>
         <Created>1618090308838</Created>
-        <Updated>1618133439327</Updated>
+        <Updated>1618134581141</Updated>
         <Active>true</Active>
         <UpdateSequenceNumber>0</UpdateSequenceNumber>
         <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>
@@ -92,6 +116,20 @@ requests.http</li>
                 <Attachment>false</Attachment>
             </ResourceAttributes>
         </NoteResource>
+        <Attributes>
+            <Author>wolfi</Author>
+        </Attributes>
+        <Dirty>true</Dirty>
+    </Note>
+    <Note>
+        <Guid>7dd78945-136e-4e61-afe9-d88c75ab477d</Guid>
+        <Title>Unbenannte Notiz</Title>
+        <Content><![CDATA[<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><br/></en-note>]]></Content>
+        <Created>1618133502645</Created>
+        <Updated>1618133502645</Updated>
+        <Active>true</Active>
+        <UpdateSequenceNumber>0</UpdateSequenceNumber>
+        <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>
         <Attributes>
             <Author>wolfi</Author>
         </Attributes>
