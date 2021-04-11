@@ -1,5 +1,5 @@
 import { IncomingMessage, ServerResponse } from "http";
-import { AccessRight, HTTP_CODES, HTTP_METHODS } from "../Shared/Model";
+import { AccessRight, HTTP_CODES, HTTP_METHODS, User } from "../Shared/Model";
 import { UsersDBAccess } from "../User/UsersDBAccess";
 import { BaseRequestHandler } from "./BaseRequestHandler";
 import { TokenValidator } from "./Model";
@@ -23,9 +23,29 @@ export class UsersHandler extends BaseRequestHandler {
             case HTTP_METHODS.GET:
                 await this.handleGet();
                 break;
+            case HTTP_METHODS.PUT:
+                    await this.handlePut();
+                    break;
             default:
                 this.handleNotFound();
                 break;
+        }
+    }
+
+    private async handlePut() {
+        const operationAuthorized = await this.operationAuthorized(AccessRight.CREATE);
+
+        if (operationAuthorized) {
+            try{
+                const user:User = await this.getRequestBody();
+                // when we got the user -> just add it in the db
+                await this.usersDBAccess.putUser(user);
+                this.respondText(HTTP_CODES.CREATED, `user ${user.name} created`);
+            } catch (error){
+                this.respondBadRequest(error.message);
+            }
+        } else {
+            this.respondUnauthorized('missing or invalid authentification');
         }
     }
     
@@ -35,6 +55,7 @@ export class UsersHandler extends BaseRequestHandler {
             const parsedUrl = Utils.getUrlParameters(this.req.url)
             if (parsedUrl) {
                 const userId = parsedUrl.query.id
+                const userName = parsedUrl.query.name
                 if (userId) {
                     const user = await this.usersDBAccess.getUserById(userId as string);
                     if (user) {
@@ -42,9 +63,14 @@ export class UsersHandler extends BaseRequestHandler {
                     } else {
                         this.handleNotFound();
                     }
+                } else if (userName) {
+                    const users = await this.usersDBAccess.getUserByName(userName as string)
+                    this.respondJsonObject(HTTP_CODES.OK, users);
+                    
                 } else {
-                    this.respondBadRequest('userId not present in request');
+                    this.respondBadRequest('userId or name not present in request');
                 }
+
                 
             }
         } else {

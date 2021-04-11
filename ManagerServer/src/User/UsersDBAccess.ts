@@ -12,6 +12,11 @@ export class UsersDBAccess {
     }
 
     public async putUser(user: User) {
+        if (!user.id) {
+            user.id = this.generateUserId();
+        }
+
+
         return new Promise((resolve, reject) => {
             this.nedb.insert(user, (err: Error | null) => {
                 if (err) {
@@ -37,5 +42,23 @@ export class UsersDBAccess {
                 }
             })
         });
+    }
+
+    public async getUserByName(name: string): Promise<User[]> {
+        const regEx = new RegExp(name);
+        return new Promise((resolve, reject) => {
+            // see documentation of nedb: find with regular expression
+            this.nedb.find({name: regEx}, (err: Error, docs: any) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(docs)
+                }
+            })
+        });
+    }
+
+    private generateUserId() {
+        return Math.random().toString(36).slice(2);
     }
 } 

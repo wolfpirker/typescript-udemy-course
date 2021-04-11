@@ -8,3 +8,19 @@ Content-Type: application/json
 #######
 GET http://localhost:8080/users?id=afwioj
 Authorization: v0hzccyy0t
+
+#######
+GET http://localhost:8080/users?name=wolf
+Authorization: kzj1b6htsbf
+
+#######
+PUT http://localhost:8080/users
+Authorization: 71bgi3w7lil
+Content-Type: application/json
+
+{
+    "age": "34",
+    "email": "w@fwf.com",
+    "name": "wolfgang",
+    "workingPosition": 3
+}
