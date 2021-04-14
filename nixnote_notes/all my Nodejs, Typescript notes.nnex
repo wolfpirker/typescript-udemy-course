@@ -122,15 +122,47 @@ changes</li>
 <ul>
 <li>npm run webpack<br /></li>
 </ul>
+<li>common source for strange "not found ..." error, even though it
+seems declared</li>
+<ul>
+<li>missing semicolon at line end!</li>
 </ul>
+</ul>
+<div>#42 Login page</div>
+<div>
+<ul>
+<li>much code duplication</li>
+<li>it is fixed in lexture 43 and 44</li>
+</ul>
+<div>#43 Base View Controller</div>
+</div>
+<div>
+<ul>
+<li>to avoid code duplication in Views</li>
+<li>new Typescript feature: generics (templates)</li>
+<li>Ctrl and click on createElement method name -&gt; Go to
+definition</li>
+<ul>
+<li>lib.dom.d.ts</li>
+<li>contains type declarations</li>
+<li>you will need to use these type declarations - also when using
+JS libraries</li>
+<li>much for convenient to work on</li>
+<li>part of the dom library -&gt; listed in tsconfig lib</li>
+</ul>
+<li>createElement() -&gt; ctrl space " should list all html
+elements</li>
+<li><br /></li>
+</ul>
+</div>
 <div><br /></div>
 </div>
 <div><br /></div>
 </div>
 </en-note>]]></Content>
-        <ContentLength>3402</ContentLength>
+        <ContentLength>4244</ContentLength>
         <Created>1618400863544</Created>
-        <Updated>1618411857239</Updated>
+        <Updated>1618413711647</Updated>
         <Active>true</Active>
         <UpdateSequenceNumber>0</UpdateSequenceNumber>
         <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>
