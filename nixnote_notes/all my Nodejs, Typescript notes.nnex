@@ -107,14 +107,30 @@ webpack-dev-server</li>
 <ul>
 <li>Port 5000 -&gt; Dispose -&gt; Go Live</li>
 </ul>
-<li><br /></li>
+</ul>
+<div>#41 First page</div>
+<div>
+<ul>
+<li>view elements inside our Typescript classes</li>
+<li>no html code to write</li>
+<li>webpack --watch in package.json</li>
+<ul>
+<li>will make webpack update the script each time source code
+changes</li>
+</ul>
+<li>then run with</li>
+<ul>
+<li>npm run webpack<br /></li>
+</ul>
 </ul>
 <div><br /></div>
 </div>
+<div><br /></div>
+</div>
 </en-note>]]></Content>
-        <ContentLength>3074</ContentLength>
+        <ContentLength>3402</ContentLength>
         <Created>1618400863544</Created>
-        <Updated>1618405391694</Updated>
+        <Updated>1618411857239</Updated>
         <Active>true</Active>
         <UpdateSequenceNumber>0</UpdateSequenceNumber>
         <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>
