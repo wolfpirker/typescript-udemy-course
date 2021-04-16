@@ -13,6 +13,7 @@ export class Server {
         createServer(
             async(req: IncomingMessage, res: ServerResponse) => {
                 console.log('got request from: ' + req.url);
+                this.addCorsHeader(res);
                 const basePath = Utils.getUrlBasePath(req.url)
 
                 switch (basePath){
@@ -30,5 +31,14 @@ export class Server {
             }
         ).listen(8080);
         console.log('server started')
+    }
+
+    private addCorsHeader(res: ServerResponse) {
+        // lesson #48: solve http call of web intervace
+        // 2nd: argument: server url, * for anything
+        // Note: not a security issue with that, since web resources are 
+        // anyway accessible from the internet - but not from a web browser!
+        res.setHeader('Access-Control-Allow-Origin', '*'); 
+        res.setHeader('Access-Control-Allow-Headers', '*');
     }
 }

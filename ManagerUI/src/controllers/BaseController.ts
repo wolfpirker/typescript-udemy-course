@@ -28,4 +28,8 @@ export abstract class BaseController {
         return element;
     }
 
+    protected insertBreak() {
+        this.createElement('br');
+    }
+
 } 

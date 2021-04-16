@@ -5,7 +5,8 @@ export enum AccessRight {
     CREATE,
     READ,
     UPDATE,
-    DELETE
+    DELETE,
+    OPTIONS
 }
 
 export interface UserCredentials extends Account {
@@ -20,11 +21,13 @@ export enum HTTP_CODES {
     NOT_FOUND = 404
 }
 
+
 export enum HTTP_METHODS {
     GET = 'GET',
     POST = 'POST',
     PUT = 'PUT',
-    DELETE = 'DELETE'
+    DELETE = 'DELETE',
+    OPTIONS = 'OPTIONS'
 }
 
 export interface User {
