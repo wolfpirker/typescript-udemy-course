@@ -39,6 +39,7 @@ export class Server {
         // Note: not a security issue with that, since web resources are 
         // anyway accessible from the internet - but not from a web browser!
         res.setHeader('Access-Control-Allow-Origin', '*'); 
-        res.setHeader('Access-Control-Allow-Headers', '*');
+        res.setHeader('Access-Control-Allow-Methods', '*');
+        res.setHeader('Access-Control-Allow-Headers', '*')
     }
 }

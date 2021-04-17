@@ -1,5 +1,7 @@
 import { BaseController } from "./BaseController";
 import { SessionToken, AccessRight } from "../models/AuthenticationModels";
+import { DataService } from "../services/DataService";
+import { User } from "../models/DataModels";
 
 // own view, which will show after login was successful
 export class DashboardController extends BaseController {
@@ -8,6 +10,10 @@ export class DashboardController extends BaseController {
     private searchArea: HTMLInputElement | undefined; 
     // -> undefined for example: when user has no rights to search
     private searchResultArea: HTMLDivElement | undefined;
+    private dataService: DataService = new DataService();
+
+    private selectedUser: User | undefined;
+    private selectedLabel: HTMLLabelElement | undefined;
 
     public setSessionToken(sessionToken: SessionToken) {
         this.sessionToken = sessionToken;
@@ -25,7 +31,6 @@ export class DashboardController extends BaseController {
             this.createElement('label',
                 'please go to the public parts of this app!');
         }
-
 
         return this.container;
     }
@@ -50,8 +55,36 @@ export class DashboardController extends BaseController {
         console.log(`button ${access} clicked`);
         switch (access) {
             case AccessRight.READ:
-                this.searchResultArea
+                const users = await this.dataService.getUsers(
+                    this.sessionToken!.tokenId,
+                    this.searchArea!.value
+                )
+                // now we got the users, let's put it in our search area result
+                for (const user of users) {
+                    const label = this.createElement('label', JSON.stringify(user));
+                    label.onclick = () => {
+                        label.classList.toggle('selectedLabel');
+                        this.selectedUser = user;
+                        this.selectedLabel = label;
+                    }
+                    this.searchResultArea!.append(label);
+                    this.searchResultArea!.append(
+                        document.createElement('br')
+                    )                   
+                }
+
+
                 break;
+            case AccessRight.DELETE:
+                    if (this.selectedUser) {
+                        // NOte: issue deleting users: undefined in URL
+                        await this.dataService.deleteUser(
+                            this.sessionToken!.tokenId,
+                            this.selectedUser
+                        )
+                        this.selectedLabel!.innerHTML = ''
+                    }
+                    break
             default:
                 break;
         }

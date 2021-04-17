@@ -5,8 +5,6 @@ const loginUrl = baseUrl + 'login';
 
 export class LoginService {
 
-
-
     public async login(userName: string, password: string): Promise<SessionToken | undefined> {
         const options = {
             method: 'POST',
