@@ -1,8 +1,9 @@
 import { TokenGenerator, Account, SessionToken, TokenValidator, TokenState, TokenRights } from "../Server/Model";
+import { countInstances } from "../Shared/ObjectsCounter";
 import { SessionTokenDBAccess } from "./SessionTokenDBAccess";
 import { UserCredentialsDBAccess } from "./UserCredentialsDBAccess";
 
-
+@countInstances
 export class Authorizer implements TokenGenerator, TokenValidator {
 
     // Note: never forget the parenthesis!

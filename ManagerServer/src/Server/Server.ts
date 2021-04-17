@@ -3,6 +3,7 @@ import { LoginHandler } from './LoginHandler';
 import { Utils } from './Utils';
 import {Authorizer} from '../Authorization/Authorizer'
 import { UsersHandler } from './UsersHandler';
+import { Monitor } from '../Shared/ObjectsCounter';
 
 export class Server {
     
@@ -23,6 +24,9 @@ export class Server {
                     case 'users':
                         await new UsersHandler(req, res, this.authorizer).handleRequest();
                         break
+                    case 'systemInfo':
+                            res.write(Monitor.printInstances());
+                            break;
                     default:
                         break;
                 }

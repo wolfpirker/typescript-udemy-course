@@ -1,5 +1,6 @@
 import { LoginService } from "../services/LoginService";
 import { BaseController } from "./BaseController";
+import { LinkTextValue } from "./Decorators";
 
 export class LoginController extends BaseController {
 
@@ -16,7 +17,8 @@ export class LoginController extends BaseController {
 
     private loginButton = this.createElement("button", "login", async () => {
         if (this.userNameInput.value && this.passwordInput.value){
-            this.resetErrorLabel();
+            //this.resetErrorLabel();
+            this.errorLabelText = "";
             const result = await this.loginService.login(
                 this.userNameInput.value,
                 this.passwordInput.value
@@ -24,16 +26,22 @@ export class LoginController extends BaseController {
             if (result) {
                 this.router.switchToDashboardView(result)
             } else{
-                this.showErrorLabel('Wrong username or password!');
+                //this.showErrorLabel('Wrong username or password!');
+                this.errorLabelText = "Wrong username or password!";
             }
         } else {
-            this.showErrorLabel('Please fill both fields!');
+            //this.showErrorLabel('Please fill both fields!');
+            this.errorLabelText = "Please fill both fields!";
         }
     });
 
     private br3 = this.createElement("br");
     private errorLabel = this.createElement("label");
+    
+    @LinkTextValue('errorLabel')
+    private errorLabelText: string = '';
 
+    /*
     private resetErrorLabel() {
         this.errorLabel.style.color = 'red';
         this.errorLabel.style.visibility = 'hidden';
@@ -42,14 +50,13 @@ export class LoginController extends BaseController {
         this.errorLabel.innerText = errorMessage;
         this.errorLabel.style.visibility = 'visible';
     }
+    */
 
     public createView(): HTMLDivElement  {
+        this.errorLabel.id = 'errorLabel';
+        this.errorLabel.style.color = 'red';
         this.passwordInput.type = 'Password';
         
-        this.errorLabel.style.color = 'red';
-        this.errorLabel.style.visibility = 'hidden';
-        this.loginButton.innerText = 'Login';
-
         return this.container;
     }
 

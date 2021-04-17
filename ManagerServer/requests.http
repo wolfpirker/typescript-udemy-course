@@ -14,13 +14,16 @@ GET http://localhost:8080/users?name=wolf
 Authorization: kzj1b6htsbf
 
 #######
+GET http://localhost:8080/systemInfo
+
+#######
 PUT http://localhost:8080/users
-Authorization: 71bgi3w7lil
+Authorization: 6q08pl057r
 Content-Type: application/json
 
 {
     "age": "34",
-    "email": "w@fwf.com",
-    "name": "wolfgang",
+    "email": "w@cherry.com",
+    "name": "uwe",
     "workingPosition": 3
 }

@@ -61,14 +61,53 @@ declaration</li>
 <li>tsc</li>
 <li>node ./Dec.js</li>
 </ul>
-<li><br /></li>
 </ul>
 </ul>
+<div>#54 UI update with decorators</div>
+<div>
+<ul>
+<li>in our project: use it for dynamically updating the status
+message "wrong username or password!"</li>
+<li>we want to limit the usage of our decorator!</li>
+<li>decorators are called earlier than our instances</li>
+<ul>
+<li>for that reason, we cannot use instance variables of our class!
+when we use a decorator</li>
+</ul>
+</ul>
+<div>#55 Class decorators</div>
+</div>
+<div>
+<ul>
+<li>the most basic kind of Typescript decorators</li>
+<li>the @sealed example on the documentation page</li>
+<ul>
+<li>it only seals the constructor</li>
+<li>the object is prevented from having new properties and beeing
+extended</li>
+<li>actually rather useless functionality</li>
+</ul>
+<li>in our Server.ts</li>
+<ul>
+<li>we would like to know how many objects of logins there is at a
+certain moment</li>
+<li>use a decorator for that</li>
+</ul>
+<li>everything which is to be used as decorators must be
+static</li>
+<li>sometimes in your career as TypeScript programer, you come
+accros more complicated signatures, weird signatures - see override
+the constructor example in the TS documentation about decoration
+@sealed</li>
+<li>in this exercise: we made good use of our decorators</li>
+</ul>
+<div>#56 Method decorators</div>
+</div>
 </div>
 </en-note>]]></Content>
-        <ContentLength>1890</ContentLength>
+        <ContentLength>3138</ContentLength>
         <Created>1618682510868</Created>
-        <Updated>1618685726818</Updated>
+        <Updated>1618697469529</Updated>
         <Active>true</Active>
         <UpdateSequenceNumber>0</UpdateSequenceNumber>
         <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>
@@ -224,6 +263,27 @@ CORS header 'Access-Control-Allow-Methods'</li>
 this; works in the proposed solution, didn't find actual
 error</span></li>
 </ul>
+<li>other behaviour I noticed</li>
+<ul>
+<li>sometimes 'Read' query initially does not result in
+anything</li>
+<li>after more clicks it finally works</li>
+<li>could be an issue found in nedb</li>
+<li>see another user with this issue:</li>
+<ul>
+<li><a href=
+"https://www.udemy.com/course/typescript-full-stack-programming/learn/lecture/20910006#questions/14013758"
+title=
+"https://www.udemy.com/course/typescript-full-stack-programming/learn/lecture/20910006#questions/14013758">
+https://www.udemy.com/course/typescript-full-stack-programming/learn/lecture/20910006#questions/14013758</a><br />
+</li>
+<li><a href="https://github.com/louischatriot/nedb/issues/337"
+title=
+"https://github.com/louischatriot/nedb/issues/337">https://github.com/louischatriot/nedb/issues/337</a><br />
+</li>
+</ul>
+<li><br /></li>
+</ul>
 </ul>
 <div><br /></div>
 </div>
@@ -231,9 +291,9 @@ error</span></li>
 <div><br /></div>
 </div>
 </en-note>]]></Content>
-        <ContentLength>4095</ContentLength>
+        <ContentLength>4908</ContentLength>
         <Created>1618517668898</Created>
-        <Updated>1618664179081</Updated>
+        <Updated>1618686279202</Updated>
         <Active>true</Active>
         <UpdateSequenceNumber>0</UpdateSequenceNumber>
         <NotebookGuid>14e7a208-536b-4f54-9f03-d5667f192b20</NotebookGuid>

@@ -1,10 +1,12 @@
 import { IncomingMessage, ServerResponse } from "http";
 import { AccessRight, HTTP_CODES, HTTP_METHODS, User } from "../Shared/Model";
+import { countInstances } from "../Shared/ObjectsCounter";
 import { UsersDBAccess } from "../User/UsersDBAccess";
 import { BaseRequestHandler } from "./BaseRequestHandler";
 import { TokenValidator } from "./Model";
 import { Utils } from "./Utils";
 
+@countInstances
 export class UsersHandler extends BaseRequestHandler {
 
     // like this we initialize the database on each server call -> not a good practice
