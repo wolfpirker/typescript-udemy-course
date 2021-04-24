@@ -4,11 +4,13 @@ import { Utils } from './Utils';
 import {Authorizer} from '../Authorization/Authorizer'
 import { UsersHandler } from './UsersHandler';
 import { Monitor } from '../Shared/ObjectsCounter';
+import { UsersDBAccess } from '../User/UsersDBAccess';
 
 export class Server {
     
     private authorizer: Authorizer = new Authorizer();
-
+    private loginHandler: LoginHandler = new LoginHandler(this.authorizer);
+    private usersHandler: UsersHandler = new UsersHandler(this.authorizer);
 
     public createServer(){
         createServer(
@@ -19,10 +21,14 @@ export class Server {
 
                 switch (basePath){
                     case 'login':
-                        await new LoginHandler(req, res, this.authorizer).handleRequest();
+                        this.loginHandler.setRequest(req);
+                        this.loginHandler.setResponse(res);
+                        await this.loginHandler.handleRequest();
                         break;
                     case 'users':
-                        await new UsersHandler(req, res, this.authorizer).handleRequest();
+                        this.usersHandler.setRequest(req);
+                        this.usersHandler.setResponse(res);
+                        await this.usersHandler.handleRequest();
                         break
                     case 'systemInfo':
                             res.write(Monitor.printInstances());
